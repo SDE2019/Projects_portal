@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7eaa36da584542be98f80af744c7c030" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectProgressMonitoringSystemModel.Mark" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectProgressMonitoringSystemModel.Phase" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectProgressMonitoringSystemModel.Project" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectProgressMonitoringSystemModel.Student" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectProgressMonitoringSystemModel.Teacher" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Marks_Phase1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Marks_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Marks_Student1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Marks_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Phase_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.FK_Project_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectProgressMonitoringSystemModel.WorksOn" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,66 @@
+﻿@model ProjectProgressMonitoringSystem.Models.Phase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentationGiven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentationGiven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.TeacherID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.TeacherID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

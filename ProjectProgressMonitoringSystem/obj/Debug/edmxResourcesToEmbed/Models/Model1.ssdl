@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectProgressMonitoringSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Marks">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="PhaseID" />
+      <PropertyRef Name="TeacherID" />
+      <PropertyRef Name="StudentUSN" />
+    </Key>
+    <Property Name="Marks" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProjectID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhaseID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TeacherID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StudentUSN" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Phase">
+    <Key>
+      <PropertyRef Name="PhaseID" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="PhaseID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProjectID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="Deadline" Type="date" />
+    <Property Name="SubmissionDone" Type="nchar" MaxLength="255" />
+    <Property Name="PresentationGiven" Type="nchar" MaxLength="255" />
+    <Property Name="Document" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TeacherID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProjectTitle" Type="nchar" MaxLength="255" Nullable="false" />
+    <Property Name="ProjectGenre" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentUSN" />
+    </Key>
+    <Property Name="StudentUSN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StudentName" Type="nchar" MaxLength="255" Nullable="false" />
+    <Property Name="TeamNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="Semester" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="255" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeacherID" />
+    </Key>
+    <Property Name="TeacherName" Type="nchar" MaxLength="255" Nullable="false" />
+    <Property Name="TeacherID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="WorksOn">
+    <Key>
+      <PropertyRef Name="StudentUSN" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="StudentUSN" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProjectID" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Marks_Phase1">
+    <End Role="Phase" Type="Self.Phase" Multiplicity="1" />
+    <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phase">
+        <PropertyRef Name="PhaseID" />
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Marks">
+        <PropertyRef Name="ProjectID" />
+        <PropertyRef Name="PhaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marks_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Marks">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marks_Student1">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentUSN" />
+      </Principal>
+      <Dependent Role="Marks">
+        <PropertyRef Name="StudentUSN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marks_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherID" />
+      </Principal>
+      <Dependent Role="Marks">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phase_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Phase" Type="Self.Phase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Phase">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorksOn_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="WorksOn" Type="Self.WorksOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="WorksOn">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorksOn_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="WorksOn" Type="Self.WorksOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentUSN" />
+      </Principal>
+      <Dependent Role="WorksOn">
+        <PropertyRef Name="StudentUSN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectProgressMonitoringSystemModelStoreContainer">
+    <EntitySet Name="Marks" EntityType="Self.Marks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phase" EntityType="Self.Phase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorksOn" EntityType="Self.WorksOn" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Marks_Phase1" Association="Self.FK_Marks_Phase1">
+      <End Role="Phase" EntitySet="Phase" />
+      <End Role="Marks" EntitySet="Marks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marks_Project" Association="Self.FK_Marks_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Marks" EntitySet="Marks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marks_Student1" Association="Self.FK_Marks_Student1">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Marks" EntitySet="Marks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marks_Teacher" Association="Self.FK_Marks_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Marks" EntitySet="Marks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phase_Project" Association="Self.FK_Phase_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Phase" EntitySet="Phase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Teacher" Association="Self.FK_Project_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorksOn_Project" Association="Self.FK_WorksOn_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="WorksOn" EntitySet="WorksOn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorksOn_Student" Association="Self.FK_WorksOn_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="WorksOn" EntitySet="WorksOn" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
