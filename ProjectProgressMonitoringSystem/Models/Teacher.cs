@@ -21,10 +21,10 @@ namespace ProjectProgressMonitoringSystem.Models
             this.Projects = new HashSet<Project>();
         }
         [Display(Name ="Teacher Name")]
-        [StringLength(60,MinimumLength =6,ErrorMessage ="{0} must be of length 4 to 60")]
+        [StringLength(60,MinimumLength =6,ErrorMessage ="Teacher name must be of length 4 to 60 characters")]
         public string TeacherName { get; set; }
 
-        [Required(ErrorMessage ="Please enter the TID")]
+        [Required(ErrorMessage ="Teacher ID is required")]
         [Display(Name ="Teacher ID")]
         public string TeacherID { get; set; }
 

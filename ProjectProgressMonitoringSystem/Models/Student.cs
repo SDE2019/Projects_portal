@@ -20,17 +20,17 @@ namespace ProjectProgressMonitoringSystem.Models
             this.Marks = new HashSet<Mark>();
             this.Projects = new HashSet<Project>();
         }
-        [Required(ErrorMessage ="Your {0} is required")][StringLength(10,ErrorMessage ="{0} has to be of 10 length")]
+        [Required(ErrorMessage ="Student USN is required")][StringLength(10,MinimumLength =10,ErrorMessage ="USN has to be of 10 length")]
         public string StudentUSN { get; set; }
 
-        [Required(ErrorMessage ="Enter name")]
-        [StringLength(60,MinimumLength =4,ErrorMessage ="{0} length must be between 4 and 60"),MinLength(4)]
+        [Required(ErrorMessage ="Please enter student name")]
+        [StringLength(60,MinimumLength =4,ErrorMessage ="Student name  must be of length 4 to 60 characters"),MinLength(4)]
         public string StudentName { get; set; }
 
-        [RegularExpression(@"^[0-9]+$",ErrorMessage ="Please enter valid {0}")]
+        [RegularExpression(@"^[0-9]+$",ErrorMessage ="Please enter valid Team number")]
         public string TeamNumber { get; set; }
 
-        [Range(1,8,ErrorMessage ="Enter valid semester")]
+        [Range(1,8,ErrorMessage ="Please enter valid semester")]
         public string Semester { get; set; }
 
         [DataType(DataType.EmailAddress)]
