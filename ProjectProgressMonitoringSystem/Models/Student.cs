@@ -11,7 +11,7 @@ namespace ProjectProgressMonitoringSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +20,25 @@ namespace ProjectProgressMonitoringSystem.Models
             this.Marks = new HashSet<Mark>();
             this.Projects = new HashSet<Project>();
         }
-    
+        [Required(ErrorMessage ="Your {0} is required")][StringLength(10,ErrorMessage ="{0} has to be of 10 length")]
         public string StudentUSN { get; set; }
+
+        [Required(ErrorMessage ="Enter name")]
+        [StringLength(60,MinimumLength =4,ErrorMessage ="{0} length must be between 4 and 60"),MinLength(4)]
         public string StudentName { get; set; }
+
+        [RegularExpression(@"^[0-9]+$",ErrorMessage ="Please enter valid {0}")]
         public string TeamNumber { get; set; }
+
+        [Range(1,8,ErrorMessage ="Enter valid semester")]
         public string Semester { get; set; }
+
+        [DataType(DataType.EmailAddress)]
         public string EmailID { get; set; }
+
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                   ErrorMessage = "Entered phone format is not valid.")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

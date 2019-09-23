@@ -11,7 +11,7 @@ namespace ProjectProgressMonitoringSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Teacher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,9 +20,15 @@ namespace ProjectProgressMonitoringSystem.Models
             this.Marks = new HashSet<Mark>();
             this.Projects = new HashSet<Project>();
         }
-    
+        [Display(Name ="Teacher Name")]
+        [StringLength(60,MinimumLength =6,ErrorMessage ="{0} must be of length 4 to 60")]
         public string TeacherName { get; set; }
+
+        [Required(ErrorMessage ="Please enter the TID")]
+        [Display(Name ="Teacher ID")]
         public string TeacherID { get; set; }
+
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

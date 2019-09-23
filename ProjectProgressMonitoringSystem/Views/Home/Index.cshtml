@@ -3,29 +3,36 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h2>Project Progress Management System</h2>
+    <p class="lead">This application helps teachers to monitor the different phases of students’ project, award marks at each phase and view their reports</p>
+    <p><a href="~/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <!--<p class="btn btn-primary btn-lg">
+            @Html.ActionLink("Learn more", "About")
+    </p>-->
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Student</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Make a new Student entry. Enter the Student details along with the team number that
+            the student belongs to, to keep track of the progress of the ongoing project.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="~/Students/Create">Student Entry &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Teacher</h2>
+        <p>
+            Login for Teachers of every department using their IDs.
+        </p>
+        <p><a class="btn btn-default" href="~/Teachers/Create">Teacher Entry &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Project</h2>
+        <p>
+            Everytime a new project is initiated the entry is to be made here!
+            Enter the project details, teacher incharge and students involved.
+        </p>
+        <p><a class="btn btn-default" href="~/Projects/Create">Project Entry &raquo;</a></p>
     </div>
 </div>
