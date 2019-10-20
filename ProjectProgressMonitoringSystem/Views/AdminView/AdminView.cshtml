@@ -4,21 +4,10 @@
     ViewBag.Title = "AdminView";
 }
 
-<h3>AdminView</h3>
-<h2>Group</h2>
-    <p><a href="~/Student/Create">Create Groups</a></p>
-<h2>Teachers</h2>
-<div>
-    <p><a href="~/Teachers/Create">Create new Teacher&raquo;</a></p>
-</div>
-<!--<div>
-    @{ WebGrid obj = new WebGrid(source: Model.Teachers, canPage: true, rowsPerPage: 10);}
-    @obj.GetHtml();
-</div>-->
-<h2>Students</h2>
-<p><a href="~/Students/Create">Create new Student  &raquo;</a></p>
 
-<!--<div>
-    @{ WebGrid obj1 = new WebGrid(source: Model.Students, canPage: true, rowsPerPage: 10);}
-    @obj1.GetHtml();
-</div>-->
+<h2>Create Student</h2>
+<p><a href="~/Students/Create">Create student</a></p>
+<h2>Create Teacher</h2>
+<p><a href="~/Teachers/Create">Create Teacher</a></p>
+<h2>Create Group</h2>
+<p><a href="~/CreateGroup/CreateGroup">Create Group</a></p>

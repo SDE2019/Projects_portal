@@ -308,8 +308,8 @@ C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSyst
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.csprojAssemblyReference.cache
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.csproj.CoreCompileInputs.cache
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.csproj.CopyComplete
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.dll
 C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.pdb
+C:\Users\Dell\source\repos\SDE2019\Projects_portal\ProjectProgressMonitoringSystem\obj\Debug\ProjectProgressMonitoringSystem.csprojAssemblyReference.cache
