@@ -1111,6 +1111,7 @@ pre code {
         -ms-flex: 0 0 41.6666666667%;
             flex: 0 0 41.6666666667%;
     max-width: 41.6666666667%;
+    margin-left:80px;
   }
   .col-md-6 {
     -webkit-box-flex: 0;
@@ -2602,9 +2603,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1a1a1a;
-  border-color: #1a1a1a;
+    color: #fff;
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    opacity: 0.65;
 }
 
 .btn-primary:hover {
@@ -4411,13 +4413,13 @@ input[type="button"].btn-block {
 }
 
 .navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }
 
 @media (max-width: 575.98px) {
