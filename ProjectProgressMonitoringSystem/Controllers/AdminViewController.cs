@@ -15,8 +15,6 @@ namespace ProjectProgressMonitoringSystem.Controllers
         {
             ProjectProgressMonitoringSystemEntities obj = new ProjectProgressMonitoringSystemEntities();
             var mymodel = new TeacherStudentList();
-            mymodel.Students = obj.Students.ToList();
-            mymodel.Teachers = obj.Teachers.ToList();
             return View(mymodel);
         }
     }
