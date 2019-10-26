@@ -18,7 +18,7 @@ namespace ProjectProgressMonitoringSystem.Controllers
         public ActionResult Index()
         {
             var projects = db.Projects.Include(p => p.Teacher);
-            return View(projects.ToList());
+            return View();
         }
 
         // GET: Projects/Details/5
@@ -39,7 +39,7 @@ namespace ProjectProgressMonitoringSystem.Controllers
         // GET: Projects/Create
         public ActionResult Create()
         {
-            ViewBag.TeacherID = new SelectList(db.Teachers, "TeacherID", "TeacherName");
+            ViewBag.TeacherID = new SelectList(db.Teachers, "TeacherID", "TeacherID");
             return View();
         }
 
